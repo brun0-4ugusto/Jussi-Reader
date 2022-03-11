@@ -12,7 +12,7 @@ Você deverá implementar um web app responsivo (desktop e mobile), de acordo co
 - [GET] https://jussi-reader.netlify.app/.netlify/functions/news-one
 - [GET] https://jussi-reader.netlify.app/.netlify/functions/news-two
 
-## Requisitos mínimos:
+## Requisitos mínimos
 - Implementar layout responsivo para mobile e desktop.
 - Implementar menu de categorias para filtragem de artigos.
 - Implementar menu de ordenação de artigos por ordem alfabética (titulo) ou cronológica (data).
@@ -26,7 +26,7 @@ Você deverá implementar um web app responsivo (desktop e mobile), de acordo co
 - Implementar paginação de artigos no rodapé da página.
 - Os artigos devem conter link com a URL da notícia original.
 
-## Desafios extras:
+## Desafios extras
 - Implementar cache local do conteúdo dos artigos, visando o funcionamento offline. 
 - Implementar opção de adicionar dinamicamente novos endpoints (APIs) de artigos.
 - Implementar a funcionalidade de salvar artigo como favorito. 
@@ -41,6 +41,7 @@ Você deverá adicionar todo o código necessário da sua aplicação (HTML, CSS
 - Quando for implementar uma funcionalidade, crie uma feature branch a partir da sua release branch, utilizando a nomenclatura `feature/seu-username-titulo-da-feature`. Por exemplo, `feature/mariozuany-article-sorting`.
 - Comite e envie seus arquivos (push) para o repositório com a maior frequência possível.
 - Assim que finalizar a implementação de uma funcionalidade, abra um pull request e escolha pelo menos dois colegas para avaliarem seu código.
+- O pull request deve ser aberto para a sua branch de release `relase/your-username`.
 - Dê instruções claras e precisas na descrição do seu pull request. Ex.: o que deverá ser testado e como fazê-lo.
 - Antes de enviar seu pull request, confira se o código está realmente funcionando – ou seja, que é testável –, mesmo que a funcionalidade implementada ainda não esteja completamente finalizada.
 - Quanto menores (mais atômicos) forem seus pull requests, melhor. Isso facilita a vida de quem irá avaliar seu código e permite feedbacks mais rápidos. 
