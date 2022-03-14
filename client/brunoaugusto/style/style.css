@@ -6,3 +6,19 @@
 body{
     background: #000000e6;
 }
+
+.paginacao{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.paginacao span{
+    padding: 5px;
+    border: 1px solid #185c5f ;
+    cursor: pointer;
+    
+}
