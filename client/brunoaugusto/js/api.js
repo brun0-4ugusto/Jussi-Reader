@@ -1,4 +1,4 @@
-async function listaNoticias() {
+/* async function listaNoticias() {
     const resposta = await fetch(`https://jussi-reader.netlify.app/.netlify/functions/news-one`)
     return await resposta.json()
 }
@@ -45,4 +45,32 @@ async function render(){
     }
 }
 
+render() */
+
+apis = [`https://jussi-reader.netlify.app/.netlify/functions/news-one`,`https://jussi-reader.netlify.app/.netlify/functions/news-two`]
+
+
+async function listaNoticias(){
+    news = []
+    for(let i = 0; i< apis.length; i++){
+        const resp = await fetch(apis[i])
+        respJson = await resp.json()
+        
+        news.push(Object.entries(respJson)[0][1])
+        
+        
+    }
+
+    return news
+}
+
+
+
+async function render(){
+    const data = await listaNoticias()
+    console.log(data)
+}
+
 render()
+
+
