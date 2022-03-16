@@ -7,6 +7,138 @@ body{
     background: #000000e6;
 }
 
+.header{
+    display: flex;
+    
+    justify-content: center;
+    height: 120px;
+}
+
+.header__container{
+    display: flex;
+    width: 80%;
+    border-bottom: 1px solid #185c5f;
+    justify-content: space-between;
+    flex-direction: column;
+    
+}
+
+.header__container__blocos{
+    display: flex;
+   
+    align-items: center;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+h1{
+    font-size: 50px;
+    padding-top: 20px;
+    font-family: 'fredoka';
+    background: -webkit-linear-gradient(270deg, rgba(255,255,255,1) 10%, rgba(50,209,217,1) 49%, rgba(24,92,95,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: neon 3s alternate infinite ease-in-out;
+    
+}
+
+@keyframes neon {
+    from{
+        filter: drop-shadow(0 0 0 #185c5f);
+    }
+    to{
+        filter: drop-shadow(0 0 15px #37969b);
+    }
+}
+
+
+.blocos__categorias{
+    display: flex;
+    
+    justify-content: space-between;
+}
+
+.categoria:first-child{
+    padding-left: 0;
+}
+
+.categoria:nth-child(2){
+    border-left: 1px solid #185c5f;
+    border-right: 1px solid #185c5f;
+}
+
+.categoria{
+    width: 33%;
+    margin-bottom: 5px;
+    padding: 0 5px 0 5px;
+    color: aliceblue;
+}
+
+.blocos__busca{
+    background-color:#ffffff;
+    border:solid 1px;
+    border-radius:15px;
+    width:300px;
+    margin-top: 40px;
+    display: flex;
+    padding: 2px;
+}
+
+
+.bloco__busca__input{
+    
+    background-color:transparent;
+    padding-left:5px;
+    font-style:italic;
+    font-size:18px;
+    border:none;
+    height:32px;
+    width:260px;
+  }
+
+  .bloco__busca__input:focus{
+    box-shadow: 0 0 0 0;
+    outline: 0;
+  }
+
+  .blocos__ordenacao {
+    display: flex;
+    padding-bottom: 5px;
+    width: 300px;
+    justify-content: center;
+    color: aliceblue;
+}
+.blocos__ordenacao div {
+    margin: 0 8px 0 8px;
+    
+}
+.blocos__ordenacao div a{
+    color: aliceblue;
+}
+
+@media (max-width: 768px) {
+    .header__container__blocos{
+        align-items: center;
+        flex-direction: column;
+    }
+    .header__container__blocos h1{
+        text-align: center;
+    }
+    .header{
+        height: fit-content;
+    }
+    .blocos__busca{
+        margin-top: 10px;
+        margin-bottom: 35px;
+    }
+    .header__container{
+        border: none;
+    }
+    .blocos__ordenacao{
+        border-bottom: 1px solid #000;
+        border-top: 1px solid #000;
+        padding-top: 5px;
+    }}
 
 .lista{
     display: flex;
