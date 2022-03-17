@@ -17,7 +17,7 @@ async function render(){
         img.classList.add('lista__container__noticia__imagem')
         
         divElementos.classList.add('lista__container__noticia__elementos')
-        divElementos.innerHTML = `<div class="lista__container__noticia__elementos--titulo"><a href="">
+        divElementos.innerHTML = `<div class="lista__container__noticia__elementos--titulo"><a href="${noticia.url}">
         <h2 class="lista__container__noticia__titulo">${noticia.title}</h2></a>
         <i class="fa-regular fa-heart"></i>
         <i class="fa-solid fa-heart hide"></i>
