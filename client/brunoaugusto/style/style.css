@@ -68,10 +68,12 @@ h1{
 }
 
 .categoria{
-    width: 33%;
+   
     margin-bottom: 5px;
     padding: 0 5px 0 5px;
-    color: aliceblue;
+    background: none;
+    border: none;
+    color: #fff;
 }
 
 .blocos__busca{

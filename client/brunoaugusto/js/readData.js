@@ -2,8 +2,10 @@ import listaNoticias from "./api.js";
 
 async function render(){
     const data = await listaNoticias()
+    //console.log(data)
     for(let i = 0; i < data.length;i++){
-       let noticia = data[i]
+       let noticia = await data[i]
+       //console.log(noticia)
 
         const ul = document.querySelector('.lista__container')
         const li = document.createElement('li')
@@ -26,14 +28,14 @@ async function render(){
         <p>${noticia.excerpt}</p>`
 
         divCategoria.classList.add('lista__container__noticia__elementos--categoria')
-        for (let i = 0; i < noticia.categories.length; i++) {
+        /* for (let i = 0; i < noticia.categories.length; i++) {
             const spanCategoria = document.createElement('span')
             const icon = document.createElement('i')
             icon.className = 'fa-solid fa-tag'
             spanCategoria.innerHTML = noticia.categories[i].name
             divCategoria.appendChild(icon)
             divCategoria.appendChild(spanCategoria)
-        }
+        } */
 
         divElementos.appendChild(divCategoria)
         li.appendChild(img)
