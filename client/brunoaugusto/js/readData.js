@@ -1,12 +1,7 @@
 import listaNoticias from "./api.js";
 
-async function render(){
-    const data = await listaNoticias()
-    //console.log(data)
-    for(let i = 0; i < data.length;i++){
-       let noticia = await data[i]
-       //console.log(noticia)
-
+async function render(data){
+    let render = await Promise.all(data.map((noticia)=>{
         const ul = document.querySelector('.lista__container')
         const li = document.createElement('li')
         const img = document.createElement('img')
@@ -28,24 +23,22 @@ async function render(){
         <p>${noticia.excerpt}</p>`
 
         divCategoria.classList.add('lista__container__noticia__elementos--categoria')
-        /* for (let i = 0; i < noticia.categories.length; i++) {
+        noticia.categories.forEach(categoria => {
             const spanCategoria = document.createElement('span')
             const icon = document.createElement('i')
             icon.className = 'fa-solid fa-tag'
-            spanCategoria.innerHTML = noticia.categories[i].name
+            spanCategoria.innerHTML = categoria.name
             divCategoria.appendChild(icon)
             divCategoria.appendChild(spanCategoria)
-        } */
-
+        });
+        
         divElementos.appendChild(divCategoria)
         li.appendChild(img)
         li.appendChild(divElementos)
         
         ul.appendChild(li)
-    }
-    
-    
-    
+
+    })) 
 }
 
-render()
+render(await listaNoticias())
