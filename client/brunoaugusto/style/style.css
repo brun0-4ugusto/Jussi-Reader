@@ -3,8 +3,15 @@
     src: url(../fonts/Fredoka-VariableFont_wdth,wght.ttf);
 }
 
+:root{
+    --bg-color:#000000e6;
+    --detalhes-color:#185c5f;
+    --icon-color:aliceblue;
+    --strings-color:#fff
+}
+
 body{
-    background: #000000e6;
+    background: var(--bg-color);
 }
 
 .header{
@@ -17,7 +24,7 @@ body{
 .header__container{
     display: flex;
     width: 80%;
-    border-bottom: 1px solid #185c5f;
+    border-bottom: 1px solid var(--detalhes-color);
     justify-content: space-between;
     flex-direction: column;
     
@@ -44,7 +51,7 @@ h1{
 
 @keyframes neon {
     from{
-        filter: drop-shadow(0 0 0 #185c5f);
+        filter: drop-shadow(0 0 0 var(--detalhes-color));
     }
     to{
         filter: drop-shadow(0 0 15px #37969b);
@@ -63,8 +70,8 @@ h1{
 }
 
 .categoria:nth-child(2){
-    border-left: 1px solid #185c5f;
-    border-right: 1px solid #185c5f;
+    border-left: 1px solid var(--detalhes-color);
+    border-right: 1px solid var(--detalhes-color);
 }
 
 .categoria{
@@ -73,11 +80,11 @@ h1{
     padding: 0 5px 0 5px;
     background: none;
     border: none;
-    color: #fff;
+    color: var(--strings-color);
 }
 
 .blocos__busca{
-    background-color:#ffffff;
+    background-color:var(--strings-color);
     border:solid 1px;
     border-radius:15px;
     width:300px;
@@ -108,14 +115,14 @@ h1{
     padding-bottom: 5px;
     width: 300px;
     justify-content: center;
-    color: aliceblue;
+    color: var(--icon-color);
 }
 .blocos__ordenacao div {
     margin: 0 8px 0 8px;
     
 }
 .blocos__ordenacao div button{
-    color: #185c5f;
+    color: var(--detalhes-color);
     cursor: pointer;
 }
 
@@ -166,12 +173,12 @@ h1{
 .lista__container__noticia__elementos--titulo h2{
     font-size: 1.6vw;
     font-family: "fredoka";
-    color: #fff;
+    color: var(--strings-color);
 }
 
 .lista__container__noticia__elementos--titulo i{
     cursor: pointer;
-    color: aliceblue;
+    color: var(--icon-color);
     padding: 8px;
 }
 
@@ -183,7 +190,7 @@ h1{
 .lista__container__noticia__elementos span{
     font-size: 12px;
     padding-top: 5px;
-    color: #185c5f;
+    color: var(--detalhes-color);
     font-weight: bold;
 }
 
@@ -192,7 +199,7 @@ h1{
     padding-top: 5px;
     margin-bottom: 5px;
     font-family: 'fredoka';
-    color: white;
+    color: var(--strings-color);
 }
 
 .lista__container__noticia__elementos--categoria{
@@ -202,7 +209,7 @@ h1{
 
 .lista__container__noticia__elementos--categoria i{
     margin-right: 5px;
-    color: aliceblue;
+    color: var(--icon-color);
 }
 
 .lista__container__noticia__elementos--categoria span{
