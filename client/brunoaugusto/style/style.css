@@ -116,31 +116,10 @@ h1{
 }
 .blocos__ordenacao div button{
     color: #185c5f;
+    cursor: pointer;
 }
 
-@media (max-width: 768px) {
-    .header__container__blocos{
-        align-items: center;
-        flex-direction: column;
-    }
-    .header__container__blocos h1{
-        text-align: center;
-    }
-    .header{
-        height: fit-content;
-    }
-    .blocos__busca{
-        margin-top: 10px;
-        margin-bottom: 35px;
-    }
-    .header__container{
-        border: none;
-    }
-    .blocos__ordenacao{
-        border-bottom: 1px solid #000;
-        border-top: 1px solid #000;
-        padding-top: 5px;
-    }}
+
 
 .lista{
     display: flex;
@@ -209,7 +188,7 @@ h1{
 }
 
 .lista__container__noticia__elementos p{
-    font-size: 15px;
+    font-size: 1vw;
     padding-top: 5px;
     margin-bottom: 5px;
     font-family: 'fredoka';
@@ -237,12 +216,33 @@ h1{
 
 @media (max-width: 1200px){
     .lista__container__noticia__elementos--titulo{
-        min-width: initial !important;
+        min-width: initial;
     }
     
 }
-
-@media (max-width: 768px) {  
+@media (max-width: 768px) {
+    .header__container__blocos{
+        align-items: center;
+        flex-direction: column;
+    }
+    .header__container__blocos h1{
+        text-align: center;
+    }
+    .header{
+        height: fit-content;
+    }
+    .blocos__busca{
+        margin-top: 10px;
+        margin-bottom: 35px;
+    }
+    .header__container{
+        border: none;
+    }
+    .blocos__ordenacao{
+        border-bottom: 1px solid #000;
+        border-top: 1px solid #000;
+        padding-top: 5px;
+    }
     .lista__container__noticia__elementos--titulo h2{
         font-size: 3vw;
     } 
@@ -251,19 +251,19 @@ h1{
     width: 90%;
 }
 .lista__container__noticia{
-    width: 100% !important;
+    width: 100%;
 }
 .lista__container__noticia__elementos p{
-    font-size: 2.8vw !important;
+    font-size: 2.8vw;
+}
 }
 
-}
+
 @media (max-width: 425px){
     .lista__container__noticia__elementos--titulo h2{
         font-size: 4vw;
     }
 .lista__container__noticia img{
-width: 100px !important;
-height: 100px !important;
-}
-}
+width: 100px;
+height: 100px;
+}}
