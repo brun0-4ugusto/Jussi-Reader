@@ -3,8 +3,15 @@
     src: url(../fonts/Fredoka-VariableFont_wdth,wght.ttf);
 }
 
+:root{
+    --bg-color:#000000e6;
+    --detalhes-color:#185c5f;
+    --icon-color:aliceblue;
+    --strings-color:#fff
+}
+
 body{
-    background: #000000e6;
+    background: var(--bg-color);
 }
 
 .header{
@@ -17,7 +24,7 @@ body{
 .header__container{
     display: flex;
     width: 80%;
-    border-bottom: 1px solid #185c5f;
+    border-bottom: 1px solid var(--detalhes-color);
     justify-content: space-between;
     flex-direction: column;
     
@@ -44,7 +51,7 @@ h1{
 
 @keyframes neon {
     from{
-        filter: drop-shadow(0 0 0 #185c5f);
+        filter: drop-shadow(0 0 0 var(--detalhes-color));
     }
     to{
         filter: drop-shadow(0 0 15px #37969b);
@@ -63,19 +70,21 @@ h1{
 }
 
 .categoria:nth-child(2){
-    border-left: 1px solid #185c5f;
-    border-right: 1px solid #185c5f;
+    border-left: 1px solid var(--detalhes-color);
+    border-right: 1px solid var(--detalhes-color);
 }
 
 .categoria{
-    width: 33%;
+   
     margin-bottom: 5px;
     padding: 0 5px 0 5px;
-    color: aliceblue;
+    background: none;
+    border: none;
+    color: var(--strings-color);
 }
 
 .blocos__busca{
-    background-color:#ffffff;
+    background-color:var(--strings-color);
     border:solid 1px;
     border-radius:15px;
     width:300px;
@@ -106,16 +115,118 @@ h1{
     padding-bottom: 5px;
     width: 300px;
     justify-content: center;
-    color: aliceblue;
+    color: var(--icon-color);
 }
 .blocos__ordenacao div {
     margin: 0 8px 0 8px;
     
 }
-.blocos__ordenacao div a{
-    color: aliceblue;
+.blocos__ordenacao div button{
+    color: var(--detalhes-color);
+    cursor: pointer;
 }
 
+
+
+.lista{
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.lista__container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    max-width: 100%;
+    justify-content: space-between;
+}
+
+.lista__container__noticia{
+    display: flex;
+    width: 49%;
+    align-items: center;
+    margin-bottom: 50px;
+}
+.lista__container__noticia--erro{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    font-size: 15vw;
+    color: wheat;
+    margin-bottom: 50px;
+}
+
+.lista__container__noticia img{
+    width: 150px;
+    height: 150px;
+    margin-right: 20px;
+}
+
+.lista__container__noticia__elementos--titulo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 300px;
+}
+
+.lista__container__noticia__elementos--titulo h2{
+    font-size: 1.6vw;
+    font-family: "fredoka";
+    color: var(--strings-color);
+}
+
+.lista__container__noticia__elementos--titulo i{
+    cursor: pointer;
+    color: var(--icon-color);
+    padding: 8px;
+}
+
+.lista__container__noticia__elementos{
+    display: flex;
+    flex-direction: column;
+}
+
+.lista__container__noticia__elementos span{
+    font-size: 12px;
+    padding-top: 5px;
+    color: var(--detalhes-color);
+    font-weight: bold;
+}
+
+.lista__container__noticia__elementos p{
+    font-size: 1vw;
+    padding-top: 5px;
+    margin-bottom: 5px;
+    font-family: 'fredoka';
+    color: var(--strings-color);
+}
+
+.lista__container__noticia__elementos--categoria{
+    display: flex;
+    align-items: center;
+}
+
+.lista__container__noticia__elementos--categoria i{
+    margin-right: 5px;
+    color: var(--icon-color);
+}
+
+.lista__container__noticia__elementos--categoria span{
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.hide{
+    display: none !important;
+}
+
+@media (max-width: 1200px){
+    .lista__container__noticia__elementos--titulo{
+        min-width: initial;
+    }
+    
+}
 @media (max-width: 768px) {
     .header__container__blocos{
         align-items: center;
@@ -139,4 +250,27 @@ h1{
         border-top: 1px solid #000;
         padding-top: 5px;
     }
+    .lista__container__noticia__elementos--titulo h2{
+        font-size: 3vw;
+    } 
+    .lista__container{
+    flex-direction: column;
+    width: 90%;
 }
+.lista__container__noticia{
+    width: 100%;
+}
+.lista__container__noticia__elementos p{
+    font-size: 2.8vw;
+}
+}
+
+
+@media (max-width: 425px){
+    .lista__container__noticia__elementos--titulo h2{
+        font-size: 4vw;
+    }
+.lista__container__noticia img{
+width: 100px;
+height: 100px;
+}}
