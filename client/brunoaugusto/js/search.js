@@ -23,7 +23,7 @@ async function search(){
         render(arrayFiltrado)
     }else{
         ul.innerHTML = '<li class="lista__container__noticia--erro">Nada encontrado</li>'
-        console.log('oi')
+        
     }
     
     
