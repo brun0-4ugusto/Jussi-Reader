@@ -4,7 +4,7 @@ import render from "./readData.js";
 export default async function paginationControl(data){
     const divPagination = document.querySelector('[data-pagination]')
     divPagination.innerHTML =""
-    let numeroPaginas = (data.length/6).toFixed()
+    let numeroPaginas = (data.length/6).toFixed() < 1 ? 1 : (data.length/6).toFixed()
     for(let i = 0; i < numeroPaginas; i++){
         const span = document.createElement('span')
         span.innerHTML = i + 1
@@ -22,15 +22,16 @@ export default async function paginationControl(data){
                arrayDividido.push(chunk)
            }
            
-           ///render(arrayDividido[divPagination.dataset.pagination])
+           
             element.addEventListener('click', (element)=>{
             const numerodaPagina = (element.currentTarget.innerHTML - 1)
             divPagination.dataset.pagination = numerodaPagina
             
-            
+            console.log(arrayDividido)
            render(arrayDividido[divPagination.dataset.pagination])
         })
     })
+    console.log(arrayDividido[divPagination.dataset.pagination])
     render(arrayDividido[divPagination.dataset.pagination])
 }
 
