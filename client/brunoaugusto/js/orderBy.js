@@ -1,5 +1,6 @@
 import listaNoticias from "./api.js";
 import render from "./readData.js";
+import paginationControl from "./pagination.js"
 
 
 const title = document.querySelector('[data-title]')
@@ -22,7 +23,7 @@ async function orderByTitle(){
     }
     const dataOrdernado = data.sort(order)
     
-    render(dataOrdernado)
+    paginationControl(dataOrdernado)
 }
 
 async function orderByDate(){
@@ -40,5 +41,5 @@ async function orderByDate(){
     }
     const dataOrdernado = data.sort(order)
     
-    render(dataOrdernado)
+    paginationControl(dataOrdernado)
 }
