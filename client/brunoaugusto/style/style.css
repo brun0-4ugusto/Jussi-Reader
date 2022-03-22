@@ -69,13 +69,13 @@ h1{
     padding-left: 0;
 }
 
-.categoria:nth-child(2){
+.categoria:nth-child(2n){
     border-left: 1px solid var(--detalhes-color);
     border-right: 1px solid var(--detalhes-color);
 }
 
 .categoria{
-   
+    cursor: pointer;
     margin-bottom: 5px;
     padding: 0 5px 0 5px;
     background: none;
