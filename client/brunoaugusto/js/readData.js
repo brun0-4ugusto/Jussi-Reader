@@ -13,6 +13,7 @@ export default async function render(data){
 
 
         li.classList.add('lista__container__noticia')
+        li.dataset.favorite = '0'
         img.src = noticia.image
         img.classList.add('lista__container__noticia__imagem')
         img.onerror = ()=>{img.src= `https://static.escolakids.uol.com.br/image/a-noticia-kids.Ijpg.jpg`}
