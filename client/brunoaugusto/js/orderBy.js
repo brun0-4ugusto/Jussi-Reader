@@ -1,5 +1,6 @@
 import listaNoticias from "./api.js";
 import render from "./readData.js";
+import paginationControl from "./pagination.js"
 
 
 const title = document.querySelector('[data-title]')
@@ -9,8 +10,7 @@ date.addEventListener('click', orderByDate)
 
 async function orderByTitle(){
     const data = await listaNoticias()
-    const ul = document.querySelector('.lista__container')
-    ul.innerHTML = ''
+    
     function order(elemento1, elemento2){
         if(elemento1.title < elemento2.title){
             return -1
@@ -22,13 +22,12 @@ async function orderByTitle(){
     }
     const dataOrdernado = data.sort(order)
     
-    render(dataOrdernado)
+    paginationControl(dataOrdernado)
 }
 
 async function orderByDate(){
     const data = await listaNoticias()
-    const ul = document.querySelector('.lista__container')
-    ul.innerHTML = ''
+    
     function order(elemento1, elemento2){
         if(elemento1.date_published < elemento2.date_published){
             return -1
@@ -40,5 +39,5 @@ async function orderByDate(){
     }
     const dataOrdernado = data.sort(order)
     
-    render(dataOrdernado)
+    paginationControl(dataOrdernado)
 }

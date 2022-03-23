@@ -1,8 +1,10 @@
 import listaNoticias from "./api.js";
 
 export default async function render(data){
+    const ul = document.querySelector('.lista__container')
+    ul.innerHTML = ''
     let render = await Promise.all(data.map((noticia)=>{
-        const ul = document.querySelector('.lista__container')
+        
         
         const li = document.createElement('li')
         const img = document.createElement('img')
@@ -56,4 +58,4 @@ export default async function render(data){
     })) 
 }
 
-window.addEventListener("load", render(await listaNoticias()))
+//window.addEventListener("load", render(await listaNoticias()))
