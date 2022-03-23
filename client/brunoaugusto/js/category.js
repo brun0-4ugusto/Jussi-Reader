@@ -1,4 +1,5 @@
 import render from "./readData.js";
+import paginationControl from "./pagination.js"
 
 function category(){
    const data = JSON.parse(localStorage.getItem("data"))
@@ -47,7 +48,7 @@ function showCategory(){
             })
             const ul = document.querySelector('.lista__container')
             ul.innerHTML = ''
-            render(a)
+            paginationControl(a)
         })
     })
     
