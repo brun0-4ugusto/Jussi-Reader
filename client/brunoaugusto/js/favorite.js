@@ -15,7 +15,7 @@ export default function favorite(event){
         })
         favoritos = favoritosFiltrado
         localStorage.setItem('Favoritos',JSON.stringify(favoritos)) 
-        console.log('oi')
+        
         
     }
     
