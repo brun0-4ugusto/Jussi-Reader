@@ -81,6 +81,7 @@
             <ul class="lista__container">
 
             </ul>
+            <script src="./js/addApi.js" type="module"></script>
             <script src="./js/loading.js" type="module"></script>
             <script src="./js/category.js" type="module"></script>
             <script src="./js/search.js" type="module"></script>
@@ -93,7 +94,10 @@
     </main>
     <footer>
         <div class="paginacao" data-pagination="0">
-
         </div>
+            <form data-addApi>
+                <input type="text" placeholder="Inserir API de Notícias" data-urlApi>
+                <input type="submit" value="Enviar">
+            </form>
     </footer>
 </body>
