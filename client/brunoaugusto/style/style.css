@@ -116,7 +116,7 @@ h1{
   .blocos__ordenacao {
     display: flex;
     padding-bottom: 5px;
-    width: 300px;
+    width: fit-content;
     justify-content: center;
     color: var(--icon-color);
 }

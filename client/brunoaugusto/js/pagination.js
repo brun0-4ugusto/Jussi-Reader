@@ -27,11 +27,11 @@ export default async function paginationControl(data){
             const numerodaPagina = (element.currentTarget.innerHTML - 1)
             divPagination.dataset.pagination = numerodaPagina
             
-            console.log(arrayDividido)
+            
            render(arrayDividido[divPagination.dataset.pagination])
         })
     })
-    console.log(arrayDividido[divPagination.dataset.pagination])
+    
     render(arrayDividido[divPagination.dataset.pagination])
 }
 

@@ -1,4 +1,4 @@
-import listaNoticias from "./api.js";
+import favorite from "./favorite.js"
 
 export default async function render(data){
     const ul = document.querySelector('.lista__container')
@@ -13,14 +13,14 @@ export default async function render(data){
 
 
         li.classList.add('lista__container__noticia')
+        li.dataset.favorite = '0'
         img.src = noticia.image
         img.classList.add('lista__container__noticia__imagem')
         img.onerror = ()=>{img.src= `https://static.escolakids.uol.com.br/image/a-noticia-kids.Ijpg.jpg`}
         divElementos.classList.add('lista__container__noticia__elementos')
         divElementos.innerHTML = `<div class="lista__container__noticia__elementos--titulo"><a href="${noticia.url}">
         <h2 class="lista__container__noticia__titulo">${noticia.title}</h2></a>
-        <i class="fa-regular fa-heart"></i>
-        <i class="fa-solid fa-heart hide"></i>
+        <i class="fa-regular fa-heart" data-heartregular></i>
         </div>
         <span>${noticia.date_published}</span>
         <p>${noticia.excerpt}</p>`
@@ -56,6 +56,16 @@ export default async function render(data){
         ul.appendChild(li)
 
     })) 
+
+    const coracao = document.querySelectorAll('[data-heartregular]')
+    coracao.forEach((element)=>{
+        if(localStorage.getItem('Favoritos') != null && localStorage.getItem('Favoritos').includes(element.parentElement.innerText)){
+            element.classList.toggle('fa-solid')
+            element.classList.toggle('fa-regular')
+        }
+    element.addEventListener('click',favorite)
+    
+   })
 }
 
 //window.addEventListener("load", render(await listaNoticias()))
