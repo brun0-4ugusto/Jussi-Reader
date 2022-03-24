@@ -259,7 +259,7 @@ h1{
 
 .loading span:nth-child(2){
     font-size: 2vw;
-    animation-delay: 3s;
+    animation-delay: 6s;
 }
 
 .loading__elements {
