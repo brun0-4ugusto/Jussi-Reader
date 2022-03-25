@@ -8,53 +8,80 @@
     <title>JUSSI READER</title>
     <link rel="stylesheet" href="./style/normalize.css">
     <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <script src="https://kit.fontawesome.com/c697d3b3f5.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    
-
-<header class="header">
-    <div class="header__container">
-
-        <div class="header__container__blocos">
-            <h1><a href="index.html" data-index>Jüssi Reader</a></h1>
-            <div class="blocos__busca">
-                <svg width="20" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="magnifying-glass" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M500.3 443.7l-119.7-119.7c27.22-40.41 40.65-90.9 33.46-144.7C401.8 87.79 326.8 13.32 235.2 1.723C99.01-15.51-15.51 99.01 1.724 235.2c11.6 91.64 86.08 166.7 177.6 178.9c53.8 7.189 104.3-6.236 144.7-33.46l119.7 119.7c15.62 15.62 40.95 15.62 56.57 0C515.9 484.7 515.9 459.3 500.3 443.7zM79.1 208c0-70.58 57.42-128 128-128s128 57.42 128 128c0 70.58-57.42 128-128 128S79.1 278.6 79.1 208z" class=""></path></svg>
-                <input type="text" class="bloco__busca__input" data-search placeholder="Buscar..."/>
-            </div>
-        </div>
-
-        <div class="header__container__blocos">
+    <div class="loading" data-loading>
+        
+        <div class="loading__elements animate__animated animate__lightSpeedInRight">
+            <span>Carregando</span>
             
-            <div class="blocos__categorias" data-categorias>
-                
-            </div>
-            <div class="blocos__ordenacao">
-                <span>Ordernar por:</span>
-                <div>
-                    <i class="fa-brands fa-adn"></i>
-                    <button data-title>Título</button>
-                </div>
-                <div>
-                    <i class="fa-solid fa-calendar-day"></i>
-                    <button data-date>Data</button>
-                </div>
-                <div>
-                    <i class="fa-solid fa-heart"></i>
-                    <button data-favoritos>Favoritos</button>
-                </div>
-                
-            </div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
         </div>
+        <span class="animate__animated animate__fadeIn" data-loadingSpan>Só mais um pouco</span>
     </div>
 
-</header>
+
+    <header class="header">
+        <div class="header__container">
+
+            <div class="header__container__blocos">
+                <h1><a href="index.html" data-index>Jüssi Reader</a></h1>
+                <div class="blocos__busca">
+                    <svg width="20" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="magnifying-glass"
+                        role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                        <path fill="currentColor"
+                            d="M500.3 443.7l-119.7-119.7c27.22-40.41 40.65-90.9 33.46-144.7C401.8 87.79 326.8 13.32 235.2 1.723C99.01-15.51-15.51 99.01 1.724 235.2c11.6 91.64 86.08 166.7 177.6 178.9c53.8 7.189 104.3-6.236 144.7-33.46l119.7 119.7c15.62 15.62 40.95 15.62 56.57 0C515.9 484.7 515.9 459.3 500.3 443.7zM79.1 208c0-70.58 57.42-128 128-128s128 57.42 128 128c0 70.58-57.42 128-128 128S79.1 278.6 79.1 208z"
+                            class=""></path>
+                    </svg>
+                    <input type="text" class="bloco__busca__input" data-search placeholder="Buscar..." />
+                </div>
+            </div>
+
+            <div class="header__container__blocos">
+
+                <div class="blocos__categorias" data-categorias>
+
+                </div>
+                <div class="blocos__ordenacao">
+                    <span>Ordernar por:</span>
+                    <div>
+                        <i class="fa-brands fa-adn"></i>
+                        <button data-title>Título</button>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-calendar-day"></i>
+                        <button data-date>Data</button>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-heart"></i>
+                        <button data-favoritos>Favoritos</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </header>
     <main>
         <div class="lista">
             <ul class="lista__container">
 
             </ul>
+            <script src="./js/loading.js" type="module"></script>
             <script src="./js/category.js" type="module"></script>
             <script src="./js/search.js" type="module"></script>
             <script src="./js/pagination.js" type="module"></script>
@@ -66,7 +93,7 @@
     </main>
     <footer>
         <div class="paginacao" data-pagination="0">
-            
+
         </div>
     </footer>
 </body>
