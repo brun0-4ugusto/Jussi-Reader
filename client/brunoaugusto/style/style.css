@@ -317,6 +317,24 @@ h1{
     }
   }
   
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+footer form{
+    width: 80%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+footer form input{
+    font-family: 'fredoka';
+    color: var(--detalhes-color);
+}
+
 
 @media (max-width: 1200px){
     .lista__container__noticia__elementos--titulo{
