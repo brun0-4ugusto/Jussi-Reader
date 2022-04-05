@@ -32,7 +32,7 @@ botaoFavoritos.addEventListener('click',()=>{
     
     let noticias = data.filter((element)=>{
         if(tituloFavoritos.includes(element.title)){
-            console.log(element)
+            
             return element
         }
     })

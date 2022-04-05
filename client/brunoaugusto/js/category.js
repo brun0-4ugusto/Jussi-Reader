@@ -1,31 +1,31 @@
-import render from "./readData.js";
+
 import paginationControl from "./pagination.js"
 
 function category(){
    const data = JSON.parse(localStorage.getItem("data"))
-   const divCategoria = document.querySelector('[data-categorias]')
-    let categorias = data.map((element)=>{
+   const divCategory = document.querySelector('[data-categorias]')
+    let categories = data.map((element)=>{
         
-        let nomeCategoria = element.categories.map(element => {
+        let categoryName = element.categories.map(element => {
             
             return element.name
         })
 
         
-        return nomeCategoria
+        return categoryName
     })
-    let valores = categorias.toString()
+    let values = categories.toString()
     
-    let arrayCategoriasUnicas = valores.split(',').filter((element)=>{
+    let uniqCategories = values.split(',').filter((element)=>{
         return element != '' 
     })
-    arrayCategoriasUnicas = [... new Set(arrayCategoriasUnicas)].sort()
+    uniqCategories = [... new Set(uniqCategories)].sort()
     
-    arrayCategoriasUnicas.forEach(element => {
+    uniqCategories.forEach(element => {
     const button = document.createElement('button')
     button.classList.add('categoria')
     button.innerHTML = `${element}`
-    divCategoria.appendChild(button)
+    divCategory.appendChild(button)
     
     });
     showCategory()
@@ -54,11 +54,3 @@ function showCategory(){
     
 }
 
-
-
-/* element.categories.forEach(element => {
-    const button = document.createElement('button')
-    button.classList.add('categoria')
-    button.innerHTML = `${element.name}`
-    divCategoria.appendChild(button)
-}); */

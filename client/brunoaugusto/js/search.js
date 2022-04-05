@@ -4,25 +4,25 @@ const searchInput = document.querySelector('[data-search]')
 searchInput.addEventListener("input", search)
 async function search(){
     const cache = JSON.parse(localStorage.getItem("data"))
-    let palavra = searchInput.value.toLowerCase()
+    let word = searchInput.value.toLowerCase()
     if(searchInput.value == ''){
         document.querySelector('[data-pagination]').classList.remove('hide')
     }
-    let arrayPesquisado = cache.map((element)=>{
-       let titulo = element.title.toLowerCase()
-        if(titulo.includes(palavra)){
+    let dataSearched = cache.map((element)=>{
+       let newsTitle = element.title.toLowerCase()
+        if(newsTitle.includes(word)){
             return element
         }
     })
-    let arrayFiltrado = arrayPesquisado.filter((element)=>{
+    let dataSearchedFiltered = dataSearched.filter((element)=>{
         if(element != undefined){
             return element
         }
     })
     const ul = document.querySelector('.lista__container')
     ul.innerHTML =''
-    if(arrayFiltrado.length != 0){
-        paginationControl(arrayFiltrado)
+    if(dataSearchedFiltered.length != 0){
+        paginationControl(dataSearchedFiltered)
         
     }else{
         ul.innerHTML = '<li class="lista__container__noticia--erro">Nada encontrado</li>'

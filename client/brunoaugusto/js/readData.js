@@ -68,4 +68,4 @@ export default async function render(data){
    })
 }
 
-//window.addEventListener("load", render(await listaNoticias()))
+
