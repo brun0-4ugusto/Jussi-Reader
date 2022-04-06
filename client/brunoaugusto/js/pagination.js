@@ -27,12 +27,30 @@ export default async function paginationControl(data){
             const pageNumber = (element.currentTarget.innerHTML - 1)
             divPagination.dataset.pagination = pageNumber
             
-            
+            currentPage()
            render(newsChunk[divPagination.dataset.pagination])
         })
     })
     
+    divPagination.dataset.pagination = 0
+    currentPage()
     render(newsChunk[divPagination.dataset.pagination])
 }
 
 paginationControl(await listaNoticias())
+
+function currentPage(){
+    const divPagination = document.querySelector('[data-pagination]')
+    let divPaginationId = divPagination.dataset.pagination
+    const pageSpan = divPagination.querySelectorAll('span')
+    console.log(divPaginationId)
+    console.log(pageSpan)
+    pageSpan.forEach(element =>{
+        if((element.innerText - 1) == divPaginationId){
+            element.classList.add('clicked')
+        }else{
+            element.classList.remove('clicked')
+        }
+    })
+}
+

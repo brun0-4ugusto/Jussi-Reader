@@ -19,6 +19,11 @@ a{
     text-decoration:none;
 }
 
+.clicked{
+    background-color: #fff;
+    color: #000;
+}
+
 ::-webkit-scrollbar{
     width: 5px;
     border-radius: 5px;
