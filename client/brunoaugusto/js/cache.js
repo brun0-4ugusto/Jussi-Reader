@@ -6,3 +6,10 @@ async function cacheLocal(data){
 }
 
 cacheLocal(await listaNoticias())
+
+export default async function itemOrder(data){
+    localStorage.setItem('order', JSON.stringify(data))
+    
+}
+
+itemOrder(await listaNoticias())

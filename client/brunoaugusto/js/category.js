@@ -1,5 +1,6 @@
 
 import paginationControl from "./pagination.js"
+import itemOrder from "./cache.js"
 
 function category(){
    const data = JSON.parse(localStorage.getItem("data"))
@@ -14,7 +15,7 @@ function category(){
         
         return categoryName
     })
-    console.log(categories.flat())
+    
     /* let values = categories.toString()
     
     let uniqCategories = values.split(',').filter((element)=>{
@@ -55,6 +56,7 @@ function showCategory(){
             })
             const ul = document.querySelector('.lista__container')
             ul.innerHTML = ''
+            itemOrder(newsCategory)
             paginationControl(newsCategory)
         })
     })

@@ -1,4 +1,6 @@
-import paginationControl from "./pagination.js"
+import paginationControl from "./pagination.js";
+import itemOrder from "./cache.js"
+
 let favoritos = JSON.parse(localStorage.getItem('Favoritos')) || []
 
 export default function favorite(event){
@@ -37,7 +39,7 @@ botaoFavoritos.addEventListener('click',()=>{
         }
     })
 
-    
+    itemOrder(noticias)
     paginationControl(noticias) // as noticias tao aparecendo repetidas pq a api ta trazendo noticias com o mesmo nome (devido a api2)
 
 })

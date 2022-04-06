@@ -4,13 +4,15 @@ import paginationControl from "./pagination.js"
 
 
 const title = document.querySelector('[data-title]')
+
 title.addEventListener('click', orderByTitle)
 const date = document.querySelector('[data-date]')
 date.addEventListener('click', orderByDate)
 
-async function orderByTitle(){
-    const data = await listaNoticias()
-    
+function orderByTitle(){
+    //const data = await listaNoticias()
+    const data = JSON.parse(localStorage.getItem("order"))
+
     function order(element1, element2){
         if(element1.title < element2.title){
             return -1
@@ -25,8 +27,9 @@ async function orderByTitle(){
     paginationControl(dataSorted)
 }
 
-async function orderByDate(){
-    const data = await listaNoticias()
+function orderByDate(){
+    //const data = await listaNoticias()
+    const data = JSON.parse(localStorage.getItem("order"))
     
     function order(element1, element2){
         if(element1.date_published < element2.date_published){
