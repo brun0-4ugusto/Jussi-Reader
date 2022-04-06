@@ -14,12 +14,17 @@ function category(){
         
         return categoryName
     })
-    let values = categories.toString()
+    console.log(categories.flat())
+    /* let values = categories.toString()
     
     let uniqCategories = values.split(',').filter((element)=>{
         return element != '' 
+    }) */
+    //uniqCategories = [... new Set(uniqCategories)].sort()
+    let flatCategories = categories.flat()
+    let uniqCategories = flatCategories.filter((element, index)=>{
+        return flatCategories.indexOf(element) == index
     })
-    uniqCategories = [... new Set(uniqCategories)].sort()
     
     uniqCategories.forEach(element => {
     const button = document.createElement('button')
@@ -37,18 +42,20 @@ function showCategory(){
     const data = JSON.parse(localStorage.getItem("data"))
     button.forEach((e)=>{
         e.addEventListener('click',(e)=>{
-            let categoria = e.currentTarget.innerHTML
-            let a = data.filter((element)=>{
-                let b = element.categories.filter((element)=>{
-                    return element.name == categoria
+            let category = e.currentTarget.innerText
+            
+            let newsCategory = data.filter((element)=>{
+                let news = element.categories.filter((element)=>{
+                    return element.name == category
                 })
-               if(b.length > 0){
+                
+               if(news.length > 0){
                    return element
                }
             })
             const ul = document.querySelector('.lista__container')
             ul.innerHTML = ''
-            paginationControl(a)
+            paginationControl(newsCategory)
         })
     })
     

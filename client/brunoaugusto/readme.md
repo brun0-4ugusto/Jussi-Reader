@@ -10,13 +10,13 @@
 
 - [x] Header
 - [x] List
-- [ ] Search
+- [x] Search
 - [x] Order By
-- [ ] Categories
-- [ ] Pagination
+- [x] Categories
+- [x] Pagination
 - [ ] Cache
-- [ ] New Endpoints
-- [ ] Animations
+- [x] New Endpoints
+- [x] Animations
 
 <h4>Pré-requisitos</h4>
 <p>Para rodar basta instalar a extensão Live Server no Visual Studio Code e executar o index.html com ele</p>
